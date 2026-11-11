@@ -34,38 +34,46 @@ const PressureHome = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      {/* Hero Section with Stadium Background */}
+      <div 
+        className="relative text-white py-16 overflow-hidden"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1920&q=80")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center mb-10">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-2xl">
               IPL Pressure Performance Intelligence System
             </h1>
-            <p className="text-xl text-blue-100">
+            <p className="text-xl md:text-2xl mb-3 drop-shadow-lg">
               Data-Driven Analysis of Most Reliable Players Under Pressure
             </p>
-            <p className="text-sm text-blue-200 mt-2">
-              Competition Round 1: IPL & T20I Analysis (2022-2026)
+            <p className="text-base md:text-lg opacity-95 drop-shadow-md">
+              SupeRR Selector Season 2 - Round 1 | IPL & T20I Analysis (2022-2026)
             </p>
           </div>
 
           {/* Key Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-4 border border-white border-opacity-20">
-              <p className="text-blue-100 text-sm mb-1">Matches Analyzed</p>
-              <p className="text-3xl font-bold">{dataStats?.total_matches || 0}</p>
+            <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 hover:bg-opacity-70 transition-all">
+              <p className="text-gray-300 text-sm mb-2">Matches Analyzed</p>
+              <p className="text-4xl font-bold">{dataStats?.total_matches || 0}</p>
             </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-4 border border-white border-opacity-20">
-              <p className="text-blue-100 text-sm mb-1">Pressure Deliveries</p>
-              <p className="text-3xl font-bold">{summary.total_pressure_balls.toLocaleString()}</p>
+            <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 hover:bg-opacity-70 transition-all">
+              <p className="text-gray-300 text-sm mb-2">Pressure Deliveries</p>
+              <p className="text-4xl font-bold">{summary.total_pressure_balls.toLocaleString()}</p>
             </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-4 border border-white border-opacity-20">
-              <p className="text-blue-100 text-sm mb-1">Players Analyzed</p>
-              <p className="text-3xl font-bold">{summary.total_players_analyzed}</p>
+            <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 hover:bg-opacity-70 transition-all">
+              <p className="text-gray-300 text-sm mb-2">Players Analyzed</p>
+              <p className="text-4xl font-bold">{summary.total_players_analyzed}</p>
             </div>
-            <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-4 border border-white border-opacity-20">
-              <p className="text-blue-100 text-sm mb-1">Eligible Players</p>
-              <p className="text-3xl font-bold">{summary.eligible_batters + summary.eligible_bowlers}</p>
+            <div className="bg-black bg-opacity-60 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 hover:bg-opacity-70 transition-all">
+              <p className="text-gray-300 text-sm mb-2">Eligible Players</p>
+              <p className="text-4xl font-bold">{summary.eligible_batters + summary.eligible_bowlers}</p>
             </div>
           </div>
         </div>
